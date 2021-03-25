@@ -2,7 +2,7 @@ FROM php:7.4-fpm
 
 # Overide PHP config
 COPY ./www.conf /usr/local/etc/php-fpm.d/www.conf
-COPY ./php-ini-overrides.ini /usr/local/etc/php/7.4/fpm/conf.d/99-overrides.ini
+ADD ./php.ini /usr/local/etc/php/php.ini
 
 # Install swoole selected extensions
 ARG DEBIAN_FRONTEND=noninteractive
