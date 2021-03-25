@@ -1,0 +1,25 @@
+version: "3"
+services:
+  nginx:
+    image: jhonoryza/nginx:laravel-alpine
+    working_dir: /var/www/html
+    volumes:
+      - ./src:/var/www/html
+      - ./mydocker/nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
+      - ./mydocker/nginx/conf.d:/etc/nginx/conf.d:ro
+    ports:
+      - "80:80"
+
+  php:
+    build:
+      context: ./mydocker/php-fpm/
+      dockerfile: Dockerfile
+    image: jhonoryza/php:ubuntu-7.4-swoole
+    working_dir: /var/www/html
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "1215:1215" # Swoole port
+      # - "9000:9000" # PHP-FPM port
+    # When the container starts up, it will run Swoole immediately.
+    # command: bash -c "php artisan swoole:http start" # Uncomment this if your use Swoole.
