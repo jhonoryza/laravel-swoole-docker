@@ -11,9 +11,6 @@ services:
       - "80:80"
 
   php:
-    build:
-      context: ./mydocker/php-fpm/
-      dockerfile: Dockerfile
     image: jhonoryza/php:ubuntu-7.4-swoole
     working_dir: /var/www/html
     volumes:
