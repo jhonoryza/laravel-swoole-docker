@@ -2,6 +2,7 @@ version: '3'
 services:
   install:
     image: jhonoryza/php:ubuntu-7.4-swoole
+    user: laravel
     volumes:
       - vendors:/var/www/html/vendors
       - ./src:/var/www/html/
