@@ -11,9 +11,12 @@ services:
       - "80:80"
 
   fpm:
-    image: jhonoryza/php:ubuntu-7.4-swoole
+    build:
+       context: .
+       dockerfile: init-laravel.Dockerfile
+    image: laravel-swoole-ready
+    user: laravel
     working_dir: /var/www/html
-    #user: "1001"
     volumes:
       - ./src:/var/www/html
     ports:
