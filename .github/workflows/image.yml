@@ -10,8 +10,10 @@ on:
 jobs:
     release:
         runs-on: ubuntu-latest
-	#permission only owner can trigger
-	if: github.actor == github.event.repository.owner.login
+        
+        #permission only owner can trigger
+        if: github.actor == github.event.repository.owner.login
+        
         steps:
         -
             name: Checkout
