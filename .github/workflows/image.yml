@@ -1,13 +1,17 @@
 name: 'Build php docker image for laravel swoole'
 
 on:
-    push:
-        branches:
-            - master
+    watch:
+        types: [started]
+    #push:
+    #    branches:
+    #        - master
 
 jobs:
     release:
         runs-on: ubuntu-latest
+	#permission only owner can trigger
+	if: github.actor == github.event.repository.owner.login
         steps:
         -
             name: Checkout
