@@ -10,7 +10,7 @@ services:
 #  install:
 #    extends:
 #      service: base
-    command: "composer install && cp .env.example .env && php artisan key:generate"
+    command: bash -c "composer install && cp .env.example .env && php artisan key:generate"
 volumes:
   vendors:
     external: true
