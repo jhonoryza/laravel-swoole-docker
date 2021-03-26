@@ -1,0 +1,15 @@
+version: '3'
+services:
+  install:
+    image: jhonoryza/php:ubuntu-7.4-swoole
+    volumes:
+      - vendors:/var/www/html/vendors
+      - ./src:/var/www/html/
+    working_dir: /var/www/html/
+#  install:
+#    extends:
+#      service: base
+    command: "composer install && cp .env.example .env && php artisan key:generate"
+volumes:
+  vendors:
+    external: true

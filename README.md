@@ -8,7 +8,18 @@ you need to download laravel project in src folder and install swoole package
 
 ## Usage
 ```
-sudo docker-compose up -d --build
+make setup
+make install
+make run
+
+#to stop
+make stop
+
+#to restart
+make restart
+
+#to destroy
+make destroy
 ```
 
 ## License
