@@ -1,15 +1,22 @@
 ## Laravel + Swoole in Docker
 already install package laravel swoole
 
-## YAML
+## Requirement
+- docker & docker-compose installed
+- make installed
+
+## Stack
 - NGINX (latest)
 - PHP-FPM (7.4.6)
 - Laravel (8.x)
 
 ## Usage
 ```
+#to initialized
 make setup
 make install
+
+#to start
 make run
 
 #to stop
