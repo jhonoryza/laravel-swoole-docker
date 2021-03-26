@@ -1,5 +1,5 @@
 ## Laravel + Swoole in Docker
-already install package laravel swoole
+already install package [laravel-swoole](https://github.com/swooletw/laravel-swoole)
 
 ## Requirement
 - docker & docker-compose installed
