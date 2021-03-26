@@ -1,5 +1,5 @@
-## Laravel + Swoole in docker
-you need to download laravel project in src folder and install swoole package
+## Laravel + Swoole in Docker
+already install package laravel swoole
 
 ## YAML
 - NGINX (latest)
